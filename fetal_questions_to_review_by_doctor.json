@@ -1,0 +1,332 @@
+[
+    {
+        "question": "What is the role of a virtual fetal ECG in C-TDI?",
+        "options": {
+            "A": "It ensures an optimal ultrasound image with high-frame rates.",
+            "B": "It is used to adjust gain and velocity of color Doppler ultrasound.",
+            "C": "It is used to accurately record myocardial events.",
+            "D": "It is used to store and analyze digital cine loops."
+        },
+        "answer": "Correct Answer: C - It is used to accurately record myocardial events.",
+        "reference": "The use of a virtual fetal ECG has been shown to have good reproducibility (40)."
+    },
+    {
+        "question": "What is the term used for the condition where the ventricles have a single inlet?",
+        "options": {
+            "A": "Single-inlet ventricle",
+            "B": "Double-inlet ventricle",
+            "C": "Triple-inlet ventricle",
+            "D": "Quad-inlet ventricle"
+        },
+        "answer": "Correct Answer: B - Double-inlet ventricle",
+        "reference": "Differential Diagnosis Two cardiac malformations are commonly involved in the differential diagnosis of TA: pulmonary atresia with intact septum and double-inlet ventricle."
+    },
+    {
+        "question": "Which condition is often mistaken for coarctation of the aorta due to a narrow aortic isthmus?",
+        "options": {
+            "A": "Hypoplastic left heart syndrome",
+            "B": "Type A interrupted aortic arch",
+            "C": "Severe fetal growth restriction",
+            "D": "Redundant foramen ovale flap"
+        },
+        "answer": "Correct Answer: C - Severe fetal growth restriction",
+        "reference": "The presence of severe fetal growth restriction can also present with a narrow aortic isthmus due to blood shunting and, thus, be mistaken for coarctation of the aorta."
+    },
+    {
+        "question": "Which plane is essential for obtaining the four-chamber view?",
+        "options": {
+            "A": "Sagittal plane",
+            "B": "Transverse plane of the fetal abdomen",
+            "C": "Coronal plane",
+            "D": "Oblique plane"
+        },
+        "answer": "Correct Answer: B - Transverse plane of the fetal abdomen",
+        "reference": "From a transverse plane of the fetal abdomen, slide the transducer toward the fetal chest, maintaining the transverse orientation, until the four-chamber view is imaged."
+    },
+    {
+        "question": "In which view is the common association of left axis deviation typically observed in APVS?",
+        "options": {
+            "A": "Four-chamber view",
+            "B": "Five-chamber view",
+            "C": "Short-axis view",
+            "D": "Three-vessel/three-vessel-trachea view"
+        },
+        "answer": "Correct Answer: A - Grayscale In APVS, the four-chamber view may appear normal in midgestation, except for the common association with left axis deviation (Fig. 30.3).",
+        "reference": "Grayscale In APVS, the four-chamber view may appear normal in midgestation, except for the common association with left axis deviation (Fig. 30.3)."
+    },
+    {
+        "question": "What is the recommended sequence of steps after detecting an AVSD in the four-chamber view?",
+        "options": {
+            "A": "Evaluate the ventriculoarterial connection, then confirm the normality of fetal situs and absence of a dilated azygos vein.",
+            "B": "Confirm the normality of fetal situs, then evaluate the ventriculoarterial connection.",
+            "C": "Assess the presence of conotruncal abnormalities, then evaluate the ventriculoarterial connection.",
+            "D": "Check for the presence of a left isomerism, then confirm the normality of fetal situs."
+        },
+        "answer": "Correct Answer: B - Confirm the normality of fetal situs, then evaluate the ventriculoarterial connection.",
+        "reference": "Once an AVSD is detected in the four-chamber view, the authors recommend to confirm the normality of fetal situs and to ensure absence of a dilated azygos vein behind the heart in order to rule out the common association with isomerism (heterotaxy) (Fig. 21.12)."
+    },
+    {
+        "question": "What anatomical structures can be visualized in the four-chamber view?",
+        "options": {
+            "A": "Only the atria",
+            "B": "Only the ventricles",
+            "C": "Atria, ventricles, atrioventricular valves, and atrial and ventricular septae",
+            "D": "Only the pulmonary veins"
+        },
+        "answer": "Correct Answer: C - Atria, ventricles, atrioventricular valves, and atrial and ventricular septae",
+        "reference": "The four-chamber view enables visualization of atria and ventricles, the atrioventricular valves, and the atrial and ventricular septae."
+    },
+    {
+        "question": "Which of the following best describes the difference between syndromic and nonsyndromic cardiac abnormalities?",
+        "options": {
+            "A": "Syndromic cases have well-described clinical traits, while nonsyndromic conditions involve specific gene abnormalities without additional clinical features.",
+            "B": "Nonsyndromic cases have well-described clinical traits, while syndromic conditions involve specific gene abnormalities without additional clinical features.",
+            "C": "Both syndromic and nonsyndromic cases have well-described clinical traits.",
+            "D": "Both syndromic and nonsyndromic cases involve specific gene abnormalities without additional clinical features."
+        },
+        "answer": "Correct Answer: A - Syndromic cases have well-described clinical traits, while nonsyndromic conditions involve specific gene abnormalities without additional clinical features.",
+        "reference": "Two groups can be identified: those with syndromic and nonsyndromic cardiac abnormalities. Syndromic cases typically have well-described clinical traits (Noonan, Charge, Alagille, Kabuki, and others), whereas nonsyndromic conditions typically involve specific gene abnormalities without additional clinical features of syndromes."
+    },
+    {
+        "question": "Which condition involves the heart being positioned on the right side of the body instead of the left?",
+        "options": {
+            "A": "Situs solitus",
+            "B": "Dextrocardia with corrected transposition",
+            "C": "Inversus with dextrocardia",
+            "D": "Isolated atrioventricular septal defect (AVSD)"
+        },
+        "answer": "Correct Answer: B - Dextrocardia with corrected transposition",
+        "reference": "Differential diagnosis of inversus with dextrocardia or situs inversus with levocardia."
+    },
+    {
+        "question": "What is the impact of fetal movement on STIC acquisition?",
+        "options": {
+            "A": "It enhances the quality of the images",
+            "B": "It introduces artifacts into the volume",
+            "C": "It has no effect",
+            "D": "It increases the acquisition time"
+        },
+        "answer": "Correct Answer: B - It introduces artifacts into the volume",
+        "reference": "Disadvantages of STIC acquisition include a fairly delayed acquisition time, which can be hampered by fetal movements or maternal breathing movements, thus introducing artifacts into the volume."
+    },
+    {
+        "question": "What does the red-magenta probe in FISH hybridize to?",
+        "options": {
+            "A": "The sequence of the region of interest on the target chromosome",
+            "B": "The entire target chromosome",
+            "C": "The control probe",
+            "D": "The sequence of the region of interest on the non-target chromosome"
+        },
+        "answer": "Correct Answer: A - The sequence of the region of interest on the target chromosome",
+        "reference": "The second probe (red-magenta) hybridizes to the sequence of the region of interest on the target chromosome."
+    },
+    {
+        "question": "What is the recommended action after identifying a fetal genetic or chromosomal abnormality through testing?",
+        "options": {
+            "A": "Immediate delivery",
+            "B": "Fetal echocardiogram",
+            "C": "No further action needed",
+            "D": "Genetic counseling"
+        },
+        "answer": "Correct Answer: B - Fetal echocardiogram",
+        "reference": "is indicated (Table 1.2)."
+    },
+    {
+        "question": "What is the typical arterial pattern of MAPCAs as shown by spectral Doppler?",
+        "options": {
+            "A": "High impedance",
+            "B": "Low impedance",
+            "C": "Variable impedance",
+            "D": "No impedance"
+        },
+        "answer": "Correct Answer: B - Low impedance",
+        "reference": "Spectral Doppler confirmation of the MAPCAs (Fig. 29.15) shows their typical arterial pattern with low impedance in comparison to the pulmonary arteries."
+    },
+    {
+        "question": "In which view is the aortic blood flow typically shown in red color within the ascending aorta?",
+        "options": {
+            "A": "Apical view",
+            "B": "Basal view",
+            "C": "Transverse view",
+            "D": "Long-axis view"
+        },
+        "answer": "Correct Answer: B - Basal view",
+        "reference": "or from a basal view (right side of fetus) demonstrating aortic blood flow in red color within the ascending aorta (Fig. 13.19B)"
+    },
+    {
+        "question": "What is the typical outcome when the UV (umbilical vein) does not enter the liver in a portosystemic shunt?",
+        "options": {
+            "A": "Development of a complete extrahepatic shunt",
+            "B": "Formation of an intrahepatic shunt",
+            "C": "No change in the shunt type",
+            "D": "Formation of a mixed shunt"
+        },
+        "answer": "Correct Answer: A - Development of a complete extrahepatic shunt",
+        "reference": "The UV often does not enter the liver (12) (Fig. 42.11E)."
+    },
+    {
+        "question": "What is the significance of an increased nuchal translucency in the context of APVS?",
+        "options": {
+            "A": "It indicates a normal pregnancy",
+            "B": "It suggests the possibility of APVS",
+            "C": "It confirms the diagnosis of APVS",
+            "D": "It indicates a healthy fetus"
+        },
+        "answer": "Correct Answer: B - An increased nuchal translucency has been noted in up to 40% of fetuses with APVS in some series, and this may facilitate the recognition of this syndrome in early gestation (7).",
+        "reference": "An increased nuchal translucency has been noted in up to 40% of fetuses with APVS in some series, and this may facilitate the recognition of this syndrome in early gestation (7)."
+    },
+    {
+        "question": "What does the five-chamber view help confirm?",
+        "options": {
+            "A": "Pulmonary artery origin",
+            "B": "Laminar flow",
+            "C": "Right ventricular outflow tract",
+            "D": "Tricuspid valve function"
+        },
+        "answer": "Correct Answer: B - Laminar flow",
+        "reference": "The origin of the aortic root from the left ventricle can be visualized, and the laminar flow confirmed."
+    },
+    {
+        "question": "What is the relationship between the presence of a redundant foramen ovale flap and coarctation of the aorta?",
+        "options": {
+            "A": "It always indicates coarctation of the aorta",
+            "B": "It may mimic coarctation of the aorta in some cases",
+            "C": "It has no relation to coarctation of the aorta",
+            "D": "It is a definitive sign of coarctation of the aorta"
+        },
+        "answer": "Correct Answer: B - It may mimic coarctation of the aorta in some cases",
+        "reference": "The presence of a redundant foramen ovale flap, also described as aneurysm of the foramen ovale and defined by a foramen ovale flap that herniates into the left atrium for more than 50% of the left atrial diameter, may fully mimic coarctation of the aorta with ventricular disproportion and narrowing of the aortic isthmus with reverse isthmic flow in some cases (32) (Figs. 19.15 and 19.16 in Chapter 19)."
+    },
+    {
+        "question": "What does the recent meta-analysis of 647 fetuses from 16 studies indicate about short- and mid-term survival?",
+        "options": {
+            "A": "It is worse for fetuses with left isomerism.",
+            "B": "It is better for fetuses with left isomerism.",
+            "C": "It is worse for fetuses with right isomerism.",
+            "D": "It is similar for both left and right isomerism."
+        },
+        "answer": "Correct Answer: B - It is better for fetuses with left isomerism.",
+        "reference": "Data from this study are summarized in Table 41.2 (8)."
+    },
+    {
+        "question": "In which type of cardiomyopathy is ventricle dilation likely to exacerbate TR?",
+        "options": {
+            "A": "Hypertrophic cardiomyopathy",
+            "B": "Restrictive cardiomyopathy",
+            "C": "Dilated cardiomyopathy",
+            "D": "Arrhythmogenic right ventricular cardiomyopathy"
+        },
+        "answer": "Correct Answer: C - Dilated cardiomyopathy",
+        "reference": "The severity may be increased in dilatative cardiomyopathy where ventricle dilation can additionally contribute to the TR."
+    },
+    {
+        "question": "Inversion mode can be used to create digital casts of which anatomical structures in fetal cardiac anomalies?",
+        "options": {
+            "A": "Lungs and liver",
+            "B": "Cardiac chambers and great vessels",
+            "C": "Brain and spinal cord",
+            "D": "Abdominal organs"
+        },
+        "answer": "Correct Answer: B - Cardiac chambers and great vessels",
+        "reference": "Application in Fetal Cardiac Anomalies Inversion mode can be applied to create \u201cdigital casts\u201d of the cardiac chambers and great vessels (21,24)"
+    },
+    {
+        "question": "What is the significance of color Doppler in the evaluation of Right Aortic Arch with Left Ductus Arteriosus (U-sign)?",
+        "options": {
+            "A": "It helps in visualizing the trachea",
+            "B": "It helps in demonstrating the U-sign",
+            "C": "It helps in identifying the ductus arteriosus",
+            "D": "It helps in differentiating between RAA and LAA"
+        },
+        "answer": "Correct Answer: B - It helps in demonstrating the U-sign",
+        "reference": "Color Doppler can easily demonstrate the U-sign (Figs. 39.10 to 39.12) (12)."
+    },
+    {
+        "question": "What is the estimated frequency of chromosomal abnormalities in infants with congenital heart disease (CHD)?",
+        "options": {
+            "A": "5% to 15%",
+            "B": "10% to 20%",
+            "C": "20% to 30%",
+            "D": "30% to 40%"
+        },
+        "answer": "Correct Answer: A - 5% to 15%",
+        "reference": "The frequency of chromosomal abnormalities in infants with CHD has been estimated at 5% to 15% from postnatal data (1,12,13)."
+    },
+    {
+        "question": "What is the role of the First Heart Field (FHF) in the development of the heart?",
+        "options": {
+            "A": "It forms the majority of the ventricular myocardium.",
+            "B": "It contributes to the formation of the atrioventricular canal and left ventricle endocardium.",
+            "C": "It is responsible for the development of the coronary arteries.",
+            "D": "It forms the right ventricle and outflow tract."
+        },
+        "answer": "Correct Answer: B - It contributes to the formation of the atrioventricular canal and left ventricle endocardium.",
+        "reference": "This FHF ultimately (pink and red in Fig. 3.7) gives rise to the LV endocardium, the atrioventricular canal, and a small part of the atria (Table 3.1)."
+    },
+    {
+        "question": "What is another potential cause of dextroposition of the heart besides space-occupying lesions?",
+        "options": {
+            "A": "Congenital heart disease",
+            "B": "Hypoplasia of the right lung",
+            "C": "Agenesis of the left lung",
+            "D": "Pulmonary hypertension"
+        },
+        "answer": "Correct Answer: B - Hypoplasia of the right lung",
+        "reference": "pleural effusion (Fig. 40.14), or from agenesis or hypoplasia of the right lung (i.e., with Scimitar syndrome) (Fig. 40.15)"
+    },
+    {
+        "question": "In tricuspid atresia, what type of ventricular septal defect (VSD) is typically present?",
+        "options": {
+            "A": "Perimembranous",
+            "B": "Supravalvar",
+            "C": "Subvalvar",
+            "D": "Infundibular"
+        },
+        "answer": "Correct Answer: A - Perimembranous",
+        "reference": "An inlet-type VSD, typically perimembranous, is always present, and the size of the right ventricle is related to the size of the VSD (Fig. 23.1)."
+    },
+    {
+        "question": "What does inversion mode do to the echogenicity of volume components?",
+        "options": {
+            "A": "It enhances the brightness of solid structures.",
+            "B": "It inverts the echogenicity of volume components.",
+            "C": "It increases the contrast between different tissues.",
+            "D": "It reduces the visibility of fluid-filled spaces."
+        },
+        "answer": "Correct Answer: B - It inverts the echogenicity of volume components.",
+        "reference": "The inversion mode inverts, as the name implies, the echogenicity of volume components."
+    },
+    {
+        "question": "Which genetic mutation is associated with arterial tortuosity syndrome?",
+        "options": {
+            "A": "COL1A1",
+            "B": "SLC2A10",
+            "C": "FBN1",
+            "D": "TGFB1"
+        },
+        "answer": "Correct Answer: B - SLC2A10",
+        "reference": "Arterial tortuosity syndrome is caused by mutations in the SLC2A10 gene."
+    },
+    {
+        "question": "What significant advancement in sonographic assessment of the fetal venous system was noted in the past 20 years?",
+        "options": {
+            "A": "The introduction of high-resolution ultrasound transducers",
+            "B": "The use of color Doppler",
+            "C": "The advent of power Doppler",
+            "D": "All of the above"
+        },
+        "answer": "Correct Answer: D - All of the above",
+        "reference": "The development of high-resolution ultrasound transducers, the common use of color Doppler, and the advent of power Doppler (see Chapter 13) were important steps, which facilitated the comprehensive study of the venous system in the fetus."
+    },
+    {
+        "question": "What is the risk of persistent pulmonary hypertension of the newborn (PPHN) associated with SSRI exposure after the 20th week of gestation?",
+        "options": {
+            "A": "No increased risk",
+            "B": "1 to 2 per 1000 live births",
+            "C": "6 to 12 per 1000 live births",
+            "D": "20 per 1000 live births"
+        },
+        "answer": "Correct Answer: C - 6 to 12 per 1000 live births",
+        "reference": "SSRI exposure after the 20th week of gestation has been associated with an increased risk of persistent pulmonary hypertension of the newborn (PPHN) (86). PPHN occurs in 1 to 2 per 1000 live births and is associated with increased morbidity and mortality. SSRI exposure increases this risk to about 6 to 12 per 1000 neonates, a sixfold increase over the background risk (86)."
+    }
+]
