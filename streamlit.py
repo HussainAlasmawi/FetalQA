@@ -1,163 +1,124 @@
-# import streamlit as st
-# import json
-# import pandas as pd
-
-# # 1. Load questions once at startup
-# @st.cache_data
-# def load_questions(path="dataset/llama_questions_rate5_axolotl_format_10_questions.jsonl"):
-#     questions = []
-#     with open(path, "r", encoding="utf-8") as f:
-#         for line in f:
-#             line = line.strip()
-#             if not line:
-#                 continue
-#             questions.append(json.loads(line))
-#     return questions
-
-# questions = load_questions()
-
-# # 2. Initialize page state
-# if "page_idx" not in st.session_state:
-#     st.session_state.page_idx = 0
-# total = len(questions)
-
-# # 3. Navigation buttons
-# col1, col2, col3 = st.columns([1,6,1])
-# with col1:
-#     if st.button("Previous") and st.session_state.page_idx > 0:
-#         st.session_state.page_idx -= 1
-# with col3:
-#     if st.button("Next") and st.session_state.page_idx < total - 1:
-#         st.session_state.page_idx += 1
-
-# # 4. Show current question
-# q = questions[st.session_state.page_idx]
-# st.header(f"Question {st.session_state.page_idx + 1} of {total}")
-# st.write(f"**Q:** {q['question']}")
-# for choice in q["choices"]:
-#     st.write(f"- {choice}")
-# st.write(f"**Answer:** {q['solution']}")
-
-# # 5. Minimal review checklist
-# st.subheader("Quick Review Checklist")
-# # 5 key items:
-# c1 = st.checkbox("1. Factual accuracy (evidence-based)", key=f"{st.session_state.page_idx}_c1")
-# c2 = st.checkbox("2. Clear, unambiguous stem", key=f"{st.session_state.page_idx}_c2")
-# c3 = st.checkbox("3. Plausible distractors", key=f"{st.session_state.page_idx}_c3")
-# c4 = st.checkbox("4. Appropriate cognitive level", key=f"{st.session_state.page_idx}_c4")
-# comments = st.text_area("General comments (optional)", key=f"{st.session_state.page_idx}_comments")
-
-# # 6. Save or display current page’s review
-# if st.button("Save Review for This Question"):
-#     record = {
-#         "index": st.session_state.page_idx,
-#         "question": q["question"],
-#         "accuracy": c1,
-#         "clarity": c2,
-#         "distractors": c3,
-#         "cognitive_level": c4,
-#         "comments": comments
-#     }
-#     # Append to session list
-#     if "reviews" not in st.session_state:
-#         st.session_state.reviews = []
-#     st.session_state.reviews.append(record)
-#     st.success("Review saved!")
-
-# # 7. At the end, allow download of all reviews
-# if st.session_state.page_idx == total - 1 and "reviews" in st.session_state:
-#     df = pd.DataFrame(st.session_state.reviews)
-#     csv = df.to_csv(index=False).encode("utf-8")
-#     st.download_button(
-#         "Download All Reviews as CSV",
-#         data=csv,
-#         file_name="mcq_reviews.csv",
-#         mime="text/csv"
-#     )
-
-import streamlit as st
 import json
 import pandas as pd
+import streamlit as st
+import os
+# ─── Constants ────────────────────────────────────────────────────────────
 
-# 1. Load questions once at startup
+QUESTIONS_PATH = "code/fetal_questions_to_review_by_doctor.json"
+if not os.path.isfile(QUESTIONS_PATH):
+    QUESTIONS_PATH="fetal_questions_to_review_by_doctor.json"
+CHECKLIST = [
+    ("Factual accuracy", "accuracy"),
+    ("Clear stem", "clarity"),
+    ("Plausible distractors", "distractors"),
+    ("Cognitive level", "cognitive_level"),
+]
+
+# ─── Data Loading ─────────────────────────────────────────────────────────
+
 @st.cache_data
-def load_questions(path="fetal_questions_to_review_by_doctor.json"):
-    with open(path, "r", encoding="utf-8") as f:
-        questions = json.load(f)
-    return questions
+def load_questions(path: str) -> list:
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
 
-questions = load_questions()
+questions = load_questions(QUESTIONS_PATH)
+total_qs = len(questions)
 
-# 2. Initialize session state
+# ─── Session State Setup ──────────────────────────────────────────────────
+
 if "page_idx" not in st.session_state:
     st.session_state.page_idx = 0
 if "reviews" not in st.session_state:
-    st.session_state.reviews = []
+    st.session_state.reviews = {}
 
-total = len(questions)
+# ─── Helper Functions ─────────────────────────────────────────────────────
 
-# Function to save the current review
-def save_current_review():
-    idx = st.session_state.page_idx
-    q = questions[idx]
-    record = {
+def get_current_question():
+    return questions[st.session_state.page_idx]
+
+def initialize_review_state(idx: int):
+    """Initialize or restore the state for a question."""
+    review = st.session_state.reviews.get(idx, {})
+    for _, key in CHECKLIST:
+        state_key = f"{idx}_{key}"
+        st.session_state.setdefault(state_key, review.get(key, None))
+
+    comments_key = f"{idx}_comments"
+    st.session_state.setdefault(comments_key, review.get("comments", ""))
+
+def save_review(idx: int):
+    """Persist current answers into reviews dict."""
+    st.session_state.reviews[idx] = {
         "index": idx,
-        "question": q["question"],
-        "accuracy": st.session_state.get(f"{idx}_c1", False),
-        "clarity": st.session_state.get(f"{idx}_c2", False),
-        "distractors": st.session_state.get(f"{idx}_c3", False),
-        "cognitive_level": st.session_state.get(f"{idx}_c4", False),
-        "comments": st.session_state.get(f"{idx}_comments", "")
+        "question": questions[idx]["question"],
+        **{key: st.session_state[f"{idx}_{key}"] for _, key in CHECKLIST},
+        "comments": st.session_state[f"{idx}_comments"],
     }
 
-    # Replace or append record
-    updated = False
-    for i, r in enumerate(st.session_state.reviews):
-        if r["index"] == idx:
-            st.session_state.reviews[i] = record
-            updated = True
-            break
-    if not updated:
-        st.session_state.reviews.append(record)
+def render_question(q: dict, idx: int):
+    st.subheader(f"Question {idx + 1} of {total_qs}")
+    st.write(q["question"])
+    for opt_key, opt_text in q["options"].items():
+        st.markdown(f"**{opt_key}.** {opt_text}")
+    st.markdown(f"**Answer:** {q['answer']}")
 
-# 3. Navigation buttons
-col1, col2, col3 = st.columns([1, 6, 1])
-with col1:
-    if st.button("Previous") and st.session_state.page_idx > 0:
-        save_current_review()
-        st.session_state.page_idx -= 1
-with col3:
-    if st.button("Next") and st.session_state.page_idx < total - 1:
-        save_current_review()
+def render_checklist(idx: int):
+    st.markdown("---")
+    st.write("### Quick Review Checklist")
+    cols = st.columns(2)
+
+    for i, (label, key) in enumerate(CHECKLIST):
+        col = cols[i % 2]
+        with col:
+            st.radio(
+                f"{i + 1}. {label}",
+                options=[True, False],
+                format_func=lambda x: "Yes" if x else "No",
+                key=f"{idx}_{key}"
+            )
+
+    st.text_area(
+        "Comments (optional)",
+        key=f"{idx}_comments",
+        height=80
+    )
+
+# ─── Navigation Callbacks ─────────────────────────────────────────────────
+
+def go_next():
+    idx = st.session_state.page_idx
+    save_review(idx)
+    if idx < total_qs - 1:
         st.session_state.page_idx += 1
 
-# 4. Display current question
-q = questions[st.session_state.page_idx]
-st.header(f"Question {st.session_state.page_idx + 1} of {total}")
-st.write(f"**Q:** {q['question']}")
-for key, text in q["options"].items():
-    st.write(f"- **{key}**: {text}")
-st.write(f"**Answer:** {q['answer']}")
-#if "reference" in q:
-#    st.markdown(f"**Reference:** {q['reference']}")
+def go_prev():
+    idx = st.session_state.page_idx
+    save_review(idx)
+    if idx > 0:
+        st.session_state.page_idx -= 1
 
-# 5. Minimal review checklist
-st.subheader("Quick Review Checklist")
-c1 = st.checkbox("1. Factual accuracy (evidence-based)", key=f"{st.session_state.page_idx}_c1")
-c2 = st.checkbox("2. Clear, unambiguous stem", key=f"{st.session_state.page_idx}_c2")
-c3 = st.checkbox("3. Plausible distractors", key=f"{st.session_state.page_idx}_c3")
-c4 = st.checkbox("4. Appropriate cognitive level", key=f"{st.session_state.page_idx}_c4")
-comments = st.text_area("General comments (optional)", key=f"{st.session_state.page_idx}_comments")
+# ─── Main Application ─────────────────────────────────────────────────────
 
-# # 6. Manual save button (optional)
-# if st.button("Save Review for This Question"):
-#     save_current_review()
-#     st.success("Review saved manually!")
+idx = st.session_state.page_idx
+initialize_review_state(idx)  # <-- FIXED: initialize BEFORE rendering widgets
 
-# 7. Download all reviews
-if st.session_state.page_idx == total - 1 and st.session_state.reviews:
-    save_current_review()  # Ensure latest page is saved
-    df = pd.DataFrame(st.session_state.reviews)
+current_question = get_current_question()
+render_question(current_question, idx)
+render_checklist(idx)
+
+# ─── Navigation Buttons ───────────────────────────────────────────────────
+
+col1, _, col3 = st.columns([1, 2, 1])
+with col1:
+    st.button("⬅ Previous", on_click=go_prev, disabled=(idx == 0))
+with col3:
+    st.button("Next ➡", on_click=go_next, disabled=(idx == total_qs - 1))
+
+# ─── Download CSV on Last Question ────────────────────────────────────────
+
+if idx == total_qs - 1 and st.session_state.reviews:
+    save_review(idx)
+    df = pd.DataFrame(st.session_state.reviews.values())
     csv = df.to_csv(index=False).encode("utf-8")
     st.download_button(
         "Download All Reviews as CSV",
