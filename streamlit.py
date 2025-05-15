@@ -9,7 +9,7 @@ if not os.path.isfile(QUESTIONS_PATH):
     QUESTIONS_PATH="fetal_questions_to_review_by_doctor.json"
 CHECKLIST = [
     ("Factual accuracy", "accuracy"),
-    ("Clear stem", "clarity"),
+    ("Clarity", "clarity"),
     ("Plausible distractors", "distractors"),
     ("Cognitive level", "cognitive_level"),
 ]
